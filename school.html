@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учительская страница</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            padding: 20px;
+        }
+        table {
+            margin: 20px auto;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        input[type="text"] {
+            width: 100px;
+            padding: 5px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Редактирование оценок</h1>
+    <input type="text" id="teacherStudentSearch" placeholder="Введите имя ученика">
+    <button onclick="editStudent()">Найти ученика</button>
+    <table id="studentTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Предмет</th>
+                <th>Оценка</th>
+                <th>Изменить оценку</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Математика</td>
+                <td>Отлично</td>
+                <td><input type="text" value="Отлично"></td>
+            </tr>
+            <tr>
+                <td>Русский язык</td>
+                <td>Хорошо</td>
+                <td><input type="text" value="Хорошо"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function editStudent() {
+        const studentName = document.getElementById('teacherStudentSearch').value;
+        if (studentName) {
+            document.getElementById('studentTable').style.display = 'table';
+        } else {
+            alert("Ученик не найден");
+        }
+    }
+</script>
+
+</body>
+</html>
