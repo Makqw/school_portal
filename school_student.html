@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценки ученика</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        table {
+            margin: 0 auto;
+            width: 50%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Оценки ученика</h1>
+    <table id="gradesTable">
+        <thead>
+            <tr>
+                <th>Предмет</th>
+                <th>Оценка</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Математика</td>
+                <td>Отлично</td>
+            </tr>
+            <tr>
+                <td>Русский язык</td>
+                <td>Хорошо</td>
+            </tr>
+            <!-- Добавьте больше предметов -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function getStudentNameFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('name');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const studentName = getStudentNameFromURL();
+        if (studentName) {
+            document.querySelector('h1').innerText = `Оценки для ${studentName}`;
+        }
+    });
+</script>
+
+</body>
+</html>
