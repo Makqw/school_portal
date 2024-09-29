@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск ученика</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Поиск ученика</h1>
+    <input type="text" id="studentName" placeholder="Введите имя ученика">
+    <button onclick="searchStudent()">Найти</button>
+</div>
+
+<script>
+    const students = [
+        "Lily P", "Mohamed haitham Re", "Eyaad Yt", "Mansoor T", "Hamed Op",
+        "Abdula Aziz", "Hashem Tr", "Layan Ui", "Zoya Fr", "Salama Hg", 
+        "Reyam Uj", "Taif Ga", "Mariam Fd", "Ameera De", "Hessa Bg", 
+        "Aria Dl", "Maksim Pankov", "Calim Cc", "Lamisa Vf", "Saif Ds", 
+        "Ahmed Hg", "Mohammed Rashid Yu", "Abdula Majed do", "Rateel Rt", 
+        "Halema Re", "Ibrahim N", "Agata Kasatkina", "Uliana Kasatkina", 
+        "MansoorNew Yu", "HessaNew Po", "Ahmed Ds"
+    ];
+
+    function searchStudent() {
+        const studentName = document.getElementById('studentName').value;
+        if (students.includes(studentName)) {
+            window.location.href = `student.html?name=${encodeURIComponent(studentName)}`;
+        } else {
+            alert("Ученик не найден");
+        }
+    }
+</script>
+
+</body>
+</html>
